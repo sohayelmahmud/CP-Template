@@ -4,6 +4,7 @@ using namespace std;
 // clang-format off
 // Typedefs & Defines
 typedef long long           ll;
+typedef long double         ld;
 typedef vector<int>         vi;
 typedef vector<ll>          vll;
 typedef pair<ll, ll>        pii;
@@ -53,6 +54,35 @@ bool isPrefix(string &s, string &y) {
 bool ispalindrom(string s) {
     f0(i, s.length()/2) if(s[i] != s[s.length()-i-1]) return false;
     return true;
+}
+bool isPrime(ll n) {
+    if (n < 2) return false;
+    if (n == 2 || n == 3) return true;
+    if (n % 2 == 0 || n % 3 == 0) return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 || n % (i + 2) == 0) return false;
+    return true;
+}
+ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
+ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+ll fastPow(ll base, ll n) {
+    ll res = 1;
+    while (n > 0) {
+        if (n % 2 == 1) res *= base;
+        base *= base;
+        n /= 2;
+    }
+    return res;
+}
+vll getDivisors(ll n) {
+    vll divisors;
+    for (ll i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            divisors.pb(i);
+            if (i * i != n) divisors.pb(n / i);
+        }
+    }
+    return divisors;
 }
 template<typename dataType1, typename dataType2>
 void allPrimeVector(dataType1 n, dataType2 &primeList) {

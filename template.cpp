@@ -4,6 +4,7 @@ using namespace std;
 // clang-format off
 // Typedefs & Defines
 typedef long long           ll;
+typedef long double         ld;
 typedef vector<int>         vi;
 typedef vector<ll>          vll;
 typedef pair<ll, ll>        pii;
