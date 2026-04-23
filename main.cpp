@@ -80,7 +80,7 @@ ll nthFib(ll n)
 {
     if (n <= 1)
         return n;
-    long long a = 0, b = 1, res;
+    ll a = 0, b = 1, res;
     for (ll i = 2; i <= n; i++)
     {
         res = a + b;
@@ -91,11 +91,11 @@ ll nthFib(ll n)
 }
 void nFibs(ll n)
 {
-    long long a = 0, b = 1;
+    ll a = 0, b = 1;
     for (ll i = 0; i < n; i++)
     {
         cout << a << " ";
-        long long next = a + b;
+        ll next = a + b;
         a = b;
         b = next;
     }
