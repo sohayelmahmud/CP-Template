@@ -10,8 +10,8 @@ typedef vector<ll>          vll;
 typedef pair<ll, ll>        pii;
 
 #define elif                else if
-#define f0(i, n)            for (int i = 0; i < (n); i++)
-#define f1(i, n)            for (int i = 1; i <= (n); i++)
+#define f0(i, n)            for (ll i = 0; i < (n); i++)
+#define f1(i, n)            for (ll i = 1; i <= (n); i++)
 
 #define all(x)              (x).begin(), (x).end()
 #define rall(x)             (x).rbegin(), (x).rend()
@@ -35,15 +35,15 @@ void invr(T &...args)
 {                         //-------------- int x, y, z;
     (cin >> ... >> args); // ------------- invr(x, y, z);
 } //---------------------------------------------------------------
-vector<int> inlt(int n) //------------- List int input
+vector<int> inlt(ll n) //------------- List int input
 {
     vector<int> arr(n);         //----- int size = 5;
-    for (int i = 0; i < n; i++) //----- vector<int> a = inlt(size);
+    for (ll i = 0; i < n; i++) //----- vector<int> a = inlt(size);
         cin >> arr[i];
     return arr;
 } //---------------------------------------------------------------
 // ############ ---- Constants ---- ############
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 // ############ ---- Useful Funtions ---- ############
 bool isPrefix(string &s, string &y) {
@@ -63,13 +63,52 @@ bool isPrime(ll n) {
         if (n % i == 0 || n % (i + 2) == 0) return false;
     return true;
 }
+bool isLucky(ll n, ll a)
+{
+    while (n > 0)
+    {
+        ll digit = n % 10;
+        if (digit != a)
+        {
+            return false;
+        }
+        n /= 10;
+    }
+    return true;
+}
+ll nthFib(ll n)
+{
+    if (n <= 1)
+        return n;
+    long long a = 0, b = 1, res;
+    for (ll i = 2; i <= n; i++)
+    {
+        res = a + b;
+        a = b;
+        b = res;
+    }
+    return res;
+}
+void nFibs(ll n)
+{
+    long long a = 0, b = 1;
+    for (ll i = 0; i < n; i++)
+    {
+        cout << a << " ";
+        long long next = a + b;
+        a = b;
+        b = next;
+    }
+    cout << endl;
+}
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 ll fastPow(ll base, ll n) {
     ll res = 1;
+    base %= MOD;
     while (n > 0) {
-        if (n % 2 == 1) res *= base;
-        base *= base;
+        if (n % 2 == 1) res = (res * base) % MOD;
+        base = (base * base) % MOD;
         n /= 2;
     }
     return res;
