@@ -113,6 +113,15 @@ ll fastPow(ll base, ll n) {
     }
     return res;
 }
+ll fact[200005];
+void precomputeFactorials(int n, ll mod) {
+    fact[0] = 1;
+    for (int i = 1; i <= n; i++) fact[i] = (fact[i - 1] * i) % mod;
+}
+ll nCr(int n, int r, ll mod) {
+    if (r < 0 || r > n) return 0;
+    return (((fact[n] * modInverse(fact[r], mod)) % mod) * modInverse(fact[n - r], mod)) % mod;
+}
 vll getDivisors(ll n) {
     vll divisors;
     for (ll i = 1; i * i <= n; i++) {
