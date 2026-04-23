@@ -10,8 +10,8 @@ typedef vector<ll>          vll;
 typedef pair<ll, ll>        pii;
 
 #define elif                else if
-#define f0(i, n)            for (int i = 0; i < (n); i++)
-#define f1(i, n)            for (int i = 1; i <= (n); i++)
+#define f0(i, n)            for (ll i = 0; i < (n); i++)
+#define f1(i, n)            for (ll i = 1; i <= (n); i++)
 
 #define all(x)              (x).begin(), (x).end()
 #define rall(x)             (x).rbegin(), (x).rend()
@@ -40,15 +40,15 @@ void invr(T &...args)
 {                         //-------------- int x, y, z;
     (cin >> ... >> args); // ------------- invr(x, y, z);
 } //---------------------------------------------------------------
-vector<int> inlt(int n) //------------- List int input
+vector<int> inlt(ll n) //------------- List int input
 {
     vector<int> arr(n);         //----- int size = 5;
-    for (int i = 0; i < n; i++) //----- vector<int> a = inlt(size);
+    for (ll i = 0; i < n; i++) //----- vector<int> a = inlt(size);
         cin >> arr[i];
     return arr;
 } //---------------------------------------------------------------
 // ############ ---- Constants ---- ############
-const int MOD = 1e9 + 7;
+const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 // ############ ---- Useful Funtions ---- ############
 
