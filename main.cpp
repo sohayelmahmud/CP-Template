@@ -24,6 +24,11 @@ typedef pair<ll, ll>        pii;
 #define NO                  cout << "NO" << endl
 #define Yes                 cout << "Yes" << endl
 #define No                  cout << "No" << endl
+
+template<typename dataType>
+inline dataType abs(dataType k) {if (k >= 0) return k; else return (-k);}
+template<typename dataType>
+inline bool isEqual(dataType a, dataType b) {return (abs((dataType)(a-b)) < 1e-9);}
 // ############ ---- Input Functions ---- ############------------
 #define inp(n)              ll n; cin >> n
 #define inpstr(s)           string s; cin >> s
@@ -53,6 +58,13 @@ bool isPrefix(string &s, string &y) {
 }
 bool ispalindrom(string s) {
     f0(i, s.length()/2) if(s[i] != s[s.length()-i-1]) return false;
+    return true;
+}
+template<typename T>
+bool isArrayPalindrome(T arr[], ll n) {
+    f0(i, n / 2) {
+        if (arr[i] != arr[n - i - 1]) return false;
+    }
     return true;
 }
 bool isPrime(ll n) {
