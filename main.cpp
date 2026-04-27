@@ -7,6 +7,7 @@ typedef long long           ll;
 typedef long double         ld;
 typedef vector<int>         vi;
 typedef vector<ll>          vll;
+typedef vector<ld>          vld;
 typedef pair<ll, ll>        pii;
 
 #define elif                else if
@@ -25,15 +26,20 @@ typedef pair<ll, ll>        pii;
 #define Yes                 cout << "Yes" << endl
 #define No                  cout << "No" << endl
 
+#define min_arr(a, n)       *min_element(a, a + n)
+#define max_arr(a, n)       *max_element(a, a + n)
+#define min_vec(v)          *min_element(all(v))
+#define max_vec(v)          *max_element(all(v))
+
 template<typename dataType>
 inline dataType abs(dataType k) {if (k >= 0) return k; else return (-k);}
 template<typename dataType>
 inline bool isEqual(dataType a, dataType b) {return (abs((dataType)(a-b)) < 1e-9);}
 // ############ ---- Input Functions ---- ############------------
-#define inp(n)              ll n; cin >> n
-#define inpstr(s)           string s; cin >> s
-#define inp2(a,b)           ll a,b; cin >> a >> b
-#define inparr(arr,n)       ll arr[n]; f0(t_ind, n) cin >> arr[t_ind]
+#define inin(n)             ll n; cin >> n
+#define insr(s)             string s; cin >> s
+#define inin2(a,b)          ll a,b; cin >> a >> b
+#define inarr(arr,n)        ll arr[n]; f0(t_ind, n) cin >> arr[t_ind]
 #define varr(v, n) vll      v(n); f0(i, n) cin >> v[i]
 template <typename... T> //--------------- multiple variable input
 void invr(T &...args)
@@ -56,10 +62,12 @@ bool isPrefix(string &s, string &y) {
     f0(i, s.length()) if(s[i] != y[i]) return false;
     return true;
 }
+
 bool ispalindrom(string s) {
     f0(i, s.length()/2) if(s[i] != s[s.length()-i-1]) return false;
     return true;
 }
+
 template<typename T>
 bool isArrayPalindrome(T arr[], ll n) {
     f0(i, n / 2) {
@@ -67,6 +75,7 @@ bool isArrayPalindrome(T arr[], ll n) {
     }
     return true;
 }
+
 bool isPrime(ll n) {
     if (n < 2) return false;
     if (n == 2 || n == 3) return true;
@@ -75,6 +84,7 @@ bool isPrime(ll n) {
         if (n % i == 0 || n % (i + 2) == 0) return false;
     return true;
 }
+
 bool isLucky(ll n, ll a)
 {
     while (n > 0)
@@ -88,6 +98,7 @@ bool isLucky(ll n, ll a)
     }
     return true;
 }
+
 ll nthFib(ll n)
 {
     if (n <= 1)
@@ -101,6 +112,7 @@ ll nthFib(ll n)
     }
     return res;
 }
+
 void nFibs(ll n)
 {
     ll a = 0, b = 1;
@@ -113,8 +125,10 @@ void nFibs(ll n)
     }
     cout << endl;
 }
+
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+
 ll fastPow(ll base, ll n) {
     ll res = 1;
     base %= MOD;
@@ -125,15 +139,18 @@ ll fastPow(ll base, ll n) {
     }
     return res;
 }
+
 ll fact[200005];
 void precomputeFactorials(int n, ll mod) {
     fact[0] = 1;
     for (int i = 1; i <= n; i++) fact[i] = (fact[i - 1] * i) % mod;
 }
+
 ll nCr(int n, int r, ll mod) {
     if (r < 0 || r > n) return 0;
     return (((fact[n] * modInverse(fact[r], mod)) % mod) * modInverse(fact[n - r], mod)) % mod;
 }
+
 vll getDivisors(ll n) {
     vll divisors;
     for (ll i = 1; i * i <= n; i++) {
@@ -144,6 +161,7 @@ vll getDivisors(ll n) {
     }
     return divisors;
 }
+
 template<typename dataType1, typename dataType2>
 void allPrimeVector(dataType1 n, dataType2 &primeList) {
     bool prime[n+1];
@@ -176,6 +194,7 @@ dataType val(char c) {
     else
         return (dataType)(c - 'A') + 10;
 }
+
 template<typename dataType>
 dataType nthBaseToDecimal(string str, dataType base) {
     int32_t len = str.length();
@@ -197,6 +216,7 @@ char reVal(dataType num) {
     else
         return (char)(num - 10 + 'A');
 }
+
 template<typename dataType>
 string nthBasefromDeci(dataType inputNum, dataType base) {
     string res = "";
@@ -221,6 +241,7 @@ dataType phi(dataType n) {
     if (n > 1) result -= result / n;
     return result;
 }
+
 template<typename dataType1, typename dataType2, typename dataType3>
 int64_t powMod(dataType1 base, dataType2 n, dataType3 mod) {
     if (n == 0) return 1;

@@ -25,15 +25,20 @@ typedef pair<ll, ll>        pii;
 #define Yes                 cout << "Yes" << endl
 #define No                  cout << "No" << endl
 
+#define min_arr(a, n)       *min_element(a, a + n)
+#define max_arr(a, n)       *max_element(a, a + n)
+#define min_vec(v)          *min_element(all(v))
+#define max_vec(v)          *max_element(all(v))
+
 template<typename dataType>
 inline dataType abs(dataType k) {if (k >= 0) return k; else return (-k);}
 template<typename dataType>
 inline bool isEqual(dataType a, dataType b) {return (abs((dataType)(a-b)) < 1e-9);}
 // ############ ---- Input Functions ---- ############------------
-#define inp(n)              ll n; cin >> n
-#define inpstr(s)           string s; cin >> s
-#define inp2(a,b)           ll a,b; cin >> a >> b
-#define inparr(arr,n)       ll arr[n]; f0(t_ind, n) cin >> arr[t_ind]
+#define inin(n)             ll n; cin >> n
+#define insr(s)             string s; cin >> s
+#define inin2(a,b)          ll a,b; cin >> a >> b
+#define inarr(arr,n)        ll arr[n]; f0(t_ind, n) cin >> arr[t_ind]
 #define varr(v, n) vll      v(n); f0(i, n) cin >> v[i]
 template <typename... T> //--------------- multiple variable input
 void invr(T &...args)
