@@ -63,7 +63,6 @@ const ll INF = 1e18;
 // ############ ---- Main Solve Function ---- ############
 void solve(int testNo)
 {
-    // cout << "Case #" << testNo << ": ";
 }
 
 void solve2(int testNo)
