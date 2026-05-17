@@ -265,8 +265,19 @@ int64_t modDivide(dataType1 a, dataType2 b, dataType3 mod, bool isPrime = true) 
 }
 // clang-format on
 // ############ ---- Main Solve Function ---- ############
-void solve()
+void solve(int testNo)
 {
+    // cout << "Case #" << testNo << ": ";
+}
+
+void solve2(int testNo)
+{
+    // cout << "Case #" << testNo << ": ";
+}
+
+void solve3(int testNo)
+{
+    // cout << "Case #" << testNo << ": ";
 }
 
 int main()
@@ -274,14 +285,13 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    // int t = 1;
-    // cin >> t;
-    // while (--t)
-    // {
-    //     solve();
-    // }
+    int t = 1;
 
-    solve();
+    // cin >> t;
+    for (int testNo = 1; testNo <= t; testNo++)
+    {
+        solve(testNo);
+    }
 
     return 0;
 }
