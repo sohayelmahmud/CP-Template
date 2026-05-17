@@ -25,6 +25,8 @@ typedef pair<ll, ll>        pii;
 #define NO                  cout << "NO" << endl
 #define Yes                 cout << "Yes" << endl
 #define No                  cout << "No" << endl
+#define yes                 cout << "yes" << endl
+#define no                  cout << "no" << endl
 
 #define min_arr(a, n)       *min_element(a, a + n)
 #define max_arr(a, n)       *max_element(a, a + n)

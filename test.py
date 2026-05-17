@@ -1,16 +1,16 @@
-import sys
-
-def solve():
-    data = sys.stdin.read().split()
-    if not data:
-        return
-
-    w = int(data[0])
-
-    if w > 2 and w % 2 == 0:
-        print("YES")
-    else:
-        print("NO")
-
-if __name__ == "__main__":
-    solve()
+# class Solution {
+#     public int reverse(int x) {
+#         long rev = 0;
+#         while (x != 0) {
+#             int pop = x % 10;
+#             x /= 10;
+#             rev = rev * 10 + pop;
+#         }
+        
+#         if (rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE) {
+#             return 0;
+#         }
+        
+#         return (int) rev;
+#     }
+# }
