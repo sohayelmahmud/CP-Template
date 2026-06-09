@@ -1,18 +1,17 @@
 class Solution {
-    public boolean validDigit(int n, int x) {
-        String s = String.valueOf(n);
-        char target = (char) (x + '0');
+    public int[] leftRigthDifference(int[] nums) {
+        int leftSum = 0;
+        int rightSum = Arrays.stream(nums).sum();
 
-        if (s.charAt(0) == target) {
-            return false;
+        int n = nums.length;
+        int[] result = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            rightSum -= nums[i];
+            result[i] = Math.abs(leftSum - rightSum);
+            leftSum += nums[i];
         }
 
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) == target) {
-                return true;
-            }
-        }
-
-        return false;
+        return result;
     }
 }

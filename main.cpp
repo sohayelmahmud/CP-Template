@@ -40,6 +40,7 @@ inline bool isEqual(dataType a, dataType b) {return (abs((dataType)(a-b)) < 1e-9
 // ############ ---- Input Functions ---- ############------------
 #define inin(n)             ll n; cin >> n
 #define insr(s)             string s; cin >> s
+#define inch(c)             char c; cin >> c
 #define inin2(a,b)          ll a,b; cin >> a >> b
 #define inarr(arr,n)        ll arr[n]; f0(t_ind, n) cin >> arr[t_ind]
 #define varr(v, n) vll      v(n); f0(i, n) cin >> v[i]
