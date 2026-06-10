@@ -38,9 +38,6 @@ def phi(n: int) -> int:
         result -= result // n
     return result
 
-def powMod(base: int, n: int, mod: int) -> int:
-    return pow(base, n, mod)
-
 def modInverse(n: int, mod: int, isPrime: bool = True) -> int:
     if isPrime:
         return pow(n, mod - 2, mod)
@@ -48,15 +45,6 @@ def modInverse(n: int, mod: int, isPrime: bool = True) -> int:
 
 def modDivide(a: int, b: int, mod: int, isPrime: bool = True) -> int:
     return (a * modInverse(b, mod, isPrime)) % mod
-
-def isPrefix(s: str, y: str) -> bool:
-    return y.startswith(s)
-
-def isPalindrome(s: str) -> bool:
-    return s == s[::-1]
-
-def isArrayPalindrome(arr: list) -> bool:
-    return arr == arr[::-1]
 
 def isPrime(n: int) -> bool:
     if n < 2: return False
@@ -91,15 +79,6 @@ def nFibs(n: int):
         res.append(str(a))
         a, b = b, a + b
     print(" ".join(res))
-
-def gcd(a: int, b: int) -> int:
-    return a if b == 0 else gcd(b, a % b)
-
-def lcm(a: int, b: int) -> int:
-    return (a // gcd(a, b)) * b
-
-def fastPow(base: int, n: int) -> int:
-    return pow(base, n, MOD)
 
 fact = []
 def precomputeFactorials(n: int, mod: int):
@@ -136,32 +115,12 @@ def allPrimeVector(n: int) -> list:
 def decimalToKbitsBinary(n: int, k: int) -> str:
     return bin(n)[2:].zfill(k)[-k:]
 
-def val(c: str) -> int:
-    if '0' <= c <= '9':
-        return ord(c) - ord('0')
-    return ord(c.upper()) - ord('A') + 10
-
-def nthBaseToDecimal(s: str, base: int) -> int:
-    try:
-        return int(s, base)
-    except ValueError:
-        power = 1
-        num = 0
-        for c in reversed(s):
-            num += val(c) * power
-            power *= base
-        return num
-
-def reVal(num: int) -> str:
-    if 0 <= num <= 9:
-        return chr(num + ord('0'))
-    return chr(num - 10 + ord('A'))
-
 def nthBaseFromDeci(inputNum: int, base: int) -> str:
     if inputNum == 0: return "0"
     res = []
+    chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     while inputNum > 0:
-        res.append(reVal(inputNum % base))
+        res.append(chars[inputNum % base])
         inputNum //= base
     return "".join(reversed(res))
 
