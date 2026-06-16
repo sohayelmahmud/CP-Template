@@ -29,18 +29,24 @@ if "LOCAL" in sys.argv:
     sys.stdin = open('input.txt', 'r')
     sys.stdout = open('output.txt', 'w')
 
-def solve():
+def solve(testNo: int):
+    pass
+
+def solve2(testNo: int):
+    pass
+
+def solve3(testNo: int):
     pass
 
 
 if __name__ == "__main__":
     start_time = time.time()
 
+    t = 1
+    # t = inin()
 
-    t = inin()
-    for _ in range(t-1): solve()
+    for testNo in range(1, t + 1):
+        solve(testNo)
+        print()
 
-    solve()
-
-# python3 solution.py LOCAL
 # sys.stderr.write(f"\nTime: {time.time() - start_time:.4f}s\n")

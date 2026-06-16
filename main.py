@@ -147,5 +147,6 @@ if __name__ == "__main__":
 
     for testNo in range(1, t + 1):
         solve(testNo)
+        print()
 
 # sys.stderr.write(f"\nTime: {time.time() - start_time:.4f}s\n")

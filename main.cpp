@@ -43,7 +43,7 @@ inline bool isEqual(dataType a, dataType b) {return (abs((dataType)(a-b)) < 1e-9
 #define inch(c)             char c; cin >> c
 #define inin2(a,b)          ll a,b; cin >> a >> b
 #define inarr(arr,n)        ll arr[n]; f0(t_ind, n) cin >> arr[t_ind]
-#define varr(v, n) vll      v(n); f0(i, n) cin >> v[i]
+#define varr(v, n)          vll v(n); f0(i, n) cin >> v[i]
 template <typename... T> //--------------- multiple variable input
 void invr(T &...args)
 {                         //-------------- int x, y, z;
@@ -292,6 +292,7 @@ int main()
     for (int testNo = 1; testNo <= t; testNo++)
     {
         solve(testNo);
+        cout << endl;
     }
 
     return 0;
